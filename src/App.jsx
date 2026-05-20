@@ -21,24 +21,24 @@ function App() {
           <TechStackCard/>
         </section>
 
-        <section id="about" className="grid grid-cols-1 gap-5 lg:grid-cols-2">
-          <AboutCard/>
-          <WorkCard/>
+        <section id="about" className="grid grid-cols-1 gap-5 lg:grid-cols-12">
+          <AboutCard className="lg:col-span-7" />
+          <WorkCard className="lg:col-span-5" />
         </section>
 
-        <section id="projects" className="grid grid-cols-1 gap-5 lg:grid-cols-12">
+        <section id="portfolio" className="grid grid-cols-1 gap-5 lg:grid-cols-12">
           <CaseStudiesCard/>
         </section>
 
-        <section id="projects" className="grid grid-cols-1 gap-5 lg:grid-cols-12">
+        <section id="experience" className="grid grid-cols-1 gap-5 lg:grid-cols-12">
           <ExperienceCard/>
         </section>
 
-        <section id="projects" className="grid grid-cols-1 gap-5 lg:grid-cols-12">
+        <section id="featured-projects" className="grid grid-cols-1 gap-5 lg:grid-cols-12">
           <ProjectsCard/>
         </section>
 
-        <section id="projects" className="grid grid-cols-1 gap-5 lg:grid-cols-12">
+        <section id="contact" className="grid grid-cols-1 gap-5 lg:grid-cols-12">
           <ContactCard/>
         </section>
 

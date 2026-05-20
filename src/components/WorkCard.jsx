@@ -1,8 +1,8 @@
 import BentoCard from "./BentoCard"
 
-function WorkCard() {
+function WorkCard({className = ""}) {
   return (
-    <BentoCard>
+    <BentoCard className={className}>
       <h3 className="mb-5 text-2xl font-bold">How I Work</h3>
 
       <div className="space-y-5">

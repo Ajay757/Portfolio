@@ -4,7 +4,7 @@ function HeroCard() {
   return (
     <BentoCard className="lg:col-span-6 min-h-[360px] flex flex-col justify-center">
       <p className="mb-6 text-sm font-semibold tracking-widest text-blue-400">
-        CS STUDENT • BUILDER • PROBLEM SOLVER
+        AI • FULL-STACK • SOFTWARE ENGINEERING
       </p>
 
       <h2 className="text-4xl md:text-6xl font-bold leading-[1.05]">
@@ -13,9 +13,8 @@ function HeroCard() {
       </h2>
 
       <p className="mt-6 max-w-lg text-lg text-white/65">
-        I’m a Computer Science student at the University of Ottawa interested in
-        AI, software engineering, UI/UX design, and building practical tools that
-        solve real problems.
+        Passionate about building intelligent systems, clean interfaces, and software
+        that people actually enjoy using.
       </p>
     </BentoCard>
   )
