@@ -1,10 +1,10 @@
-import { useSearchParams, Link } from "react-router-dom"
+import { useSearchParams, useNavigate } from "react-router-dom"
 
 function ComingSoon() {
   const [searchParams] = useSearchParams()
+  const navigate = useNavigate()
 
-  const project =
-    searchParams.get("project") || "Case Study"
+  const project = searchParams.get("project") || "Case Study"
 
   return (
     <main className="flex min-h-screen items-center justify-center bg-[#050816] px-6 text-white">
@@ -18,17 +18,16 @@ function ComingSoon() {
         </h1>
 
         <p className="mt-5 text-lg text-white/60">
-          This case study is currently being designed and
-          will be added soon.
+          This case study is currently being designed and will be added soon.
         </p>
 
         <div className="mt-8">
-          <Link
-            to="/"
+          <button
+            onClick={() => navigate(-1)}
             className="rounded-xl bg-blue-600 px-6 py-3 font-medium transition hover:bg-blue-500"
           >
             ← Back to Portfolio
-          </Link>
+          </button>
         </div>
       </div>
     </main>
