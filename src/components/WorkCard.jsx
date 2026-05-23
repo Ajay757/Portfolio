@@ -1,38 +1,59 @@
 import BentoCard from "./BentoCard"
 
-function WorkCard({className = ""}) {
+function WorkCard({ className = "" }) {
   return (
     <BentoCard className={className}>
-      <h3 className="mb-5 text-2xl font-bold">How I Work</h3>
+      <h3 className="mb-6 text-2xl font-bold">
+        How I Work
+      </h3>
 
-      <div className="space-y-5">
+      <div className="space-y-6">
         <div>
-          <h4 className="font-semibold text-blue-400">Understand</h4>
+          <h4 className="font-semibold text-blue-400">
+            Understand
+          </h4>
+
           <p className="text-white/70">
-            Research the problem and understand user needs.
+            Research problems and understand user needs.
           </p>
         </div>
 
         <div>
-          <h4 className="font-semibold text-blue-400">Design</h4>
+          <h4 className="font-semibold text-blue-400">
+            Design
+          </h4>
+
           <p className="text-white/70">
-            Plan layouts, structure, and interactions before building.
+            Plan structure, layouts, and interactions before building.
           </p>
         </div>
 
         <div>
-          <h4 className="font-semibold text-blue-400">Build</h4>
+          <h4 className="font-semibold text-blue-400">
+            Build
+          </h4>
+
           <p className="text-white/70">
-            Develop scalable and maintainable solutions with clean code.
+            Develop maintainable solutions with clean, scalable code.
           </p>
         </div>
 
         <div>
-          <h4 className="font-semibold text-blue-400">Improve</h4>
+          <h4 className="font-semibold text-blue-400">
+            Improve
+          </h4>
+
           <p className="text-white/70">
-            Test, iterate, and refine through feedback.
+            Iterate and refine through testing and feedback.
           </p>
         </div>
+      </div>
+
+      <div className="mt-8 border-t border-white/10 pt-4">
+        <p className="text-xs text-white/40">
+          Currently learning UI/UX principles through SEG3125, including
+          usability, hierarchy, contrast, and user-centered design.
+        </p>
       </div>
     </BentoCard>
   )
