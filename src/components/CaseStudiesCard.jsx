@@ -3,10 +3,10 @@ import BentoCard from "./BentoCard"
 const caseStudies = [
   {
     num: "01",
-    title: "Service Site",
-    desc: "A future website for a service-based business.",
-    image: "/assets/service-site.jpg",
-    link: "/coming-soon?project=Service+Site",
+    title: "Crown Cuts Barbershop",
+    desc: "A premium modern barber shop website designed using user-centered design principles, featuring service exploration, barber profiles, appointment booking, and confirmation flows.",
+    image: "/assets/crown-cuts.png",
+    link: "https://crown-cuts.netlify.app/",
   },
   {
     num: "02",
@@ -51,6 +51,8 @@ function CaseStudiesCard() {
           <a
             key={study.title}
             href={study.link}
+            target={study.link.startsWith("http") ? "_blank" : undefined}
+            rel={study.link.startsWith("http") ? "noopener noreferrer" : undefined}
             className="
               group
               rounded-2xl
@@ -95,8 +97,8 @@ function CaseStudiesCard() {
                 {study.desc}
               </p>
 
-              <p className="mt-2 text-sm text-white/40">
-                Coming Soon
+              <p className="mt-2 text-sm text-blue-400">
+                View Project →
               </p>
             </div>
           </a>
