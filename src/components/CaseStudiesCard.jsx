@@ -11,16 +11,16 @@ const caseStudies = [
   {
     num: "02",
     title: "Memory Game",
-    desc: "A future interactive memory game interface.",
-    image: "/assets/memory-game.png",
-    link: "/coming-soon?project=Memory+Game",
+    desc: "A Retro Sequence Memory Game",
+    image: "/assets/pulsepath.png",
+    link: "https://pulsepath-game.netlify.app/",
   },
   {
     num: "03",
-    title: "E-Commerce Site",
-    desc: "A future shopping experience design.",
-    image: "/assets/ecommerce-site.avif",
-    link: "/coming-soon?project=E-Commerce+Site",
+    title: "Novagear",
+    desc: "A high-fidelity gaming accessories e-commerce prototype.",
+    image: "/assets/novagear.png",
+    link: "https://nova-gear.netlify.app/",
   },
   {
     num: "04",
