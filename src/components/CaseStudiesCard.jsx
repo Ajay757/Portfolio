@@ -27,7 +27,7 @@ const caseStudies = [
     title: "Analytics Site",
     desc: "A future dashboard with data visualization.",
     image: "/assets/analytics-site.jpg",
-    link: "/coming-soon?project=Analytics+Site",
+    link: "https://steamscope.netlify.app/",
   },
 ]
 
