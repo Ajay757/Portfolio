@@ -1,50 +1,20 @@
-import Navbar from "./components/Navbar"
-import HeroCard from "./components/HeroCard"
-import ProfileCard from "./components/ProfileCard"
-import TechStackCard from "./components/TechStackCard"
-import AboutCard from "./components/AboutCard"
-import WorkCard from "./components/WorkCard"
-import CaseStudiesCard from "./components/CaseStudiesCard"
-import ExperienceCard from "./components/ExperienceCard"
-import ProjectsCard from "./components/ProjectsCard"
-import ContactCard from "./components/ContactCard"
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { projects, experiences, otherWork } from './data/portfolioData'
 
-function App() {
-  return (
-    <main className="min-h-screen bg-[#050816] px-6 py-6 text-white">
-      <div className="mx-auto max-w-7xl space-y-5">
-        <Navbar/>
-
-        <section id="home" className="grid grid-cols-1 gap-5 lg:grid-cols-12">
-          <HeroCard/>
-          <ProfileCard/>
-          <TechStackCard/>
-        </section>
-
-        <section id="about" className="grid grid-cols-1 gap-5 lg:grid-cols-12">
-          <AboutCard className="lg:col-span-7" />
-          <WorkCard className="lg:col-span-5" />
-        </section>
-
-        <section id="portfolio" className="grid grid-cols-1 gap-5 lg:grid-cols-12">
-          <CaseStudiesCard/>
-        </section>
-
-        <section id="experience" className="grid grid-cols-1 gap-5 lg:grid-cols-12">
-          <ExperienceCard/>
-        </section>
-
-        <section id="featured-projects" className="grid grid-cols-1 gap-5 lg:grid-cols-12">
-          <ProjectsCard/>
-        </section>
-
-        <section id="contact" className="grid grid-cols-1 gap-5 lg:grid-cols-12">
-          <ContactCard/>
-        </section>
-
-      </div>
-    </main>
-  )
+export function Navigation() {
+  const [open, setOpen] = useState(false)
+  return <header className="site-header"><Link className="wordmark" to="/" aria-label="Ajay Suthaharan home">ajay<span>.</span></Link><button className="menu-toggle" aria-expanded={open} aria-controls="navigation" onClick={() => setOpen(!open)}>{open ? 'Close' : 'Menu'}</button><nav id="navigation" className={open ? 'navigation is-open' : 'navigation'} aria-label="Main navigation"><a href="/#experience" onClick={() => setOpen(false)}>Experience</a><a href="/#projects" onClick={() => setOpen(false)}>Projects</a><a href="/#contact" onClick={() => setOpen(false)}>Contact</a><a className="nav-resume" href="/resume.pdf" target="_blank" rel="noreferrer">Resume ↗</a></nav></header>
 }
-
-export default App
+export function Footer() {
+  return <footer id="contact" className="contact"><div><p className="eyebrow">GET IN TOUCH</p><h2>Let’s talk.</h2><a className="email-link" href="mailto:asuth075@uottawa.ca">asuth075@uottawa.ca ↗</a></div><div className="contact-links"><a href="https://github.com/Ajay757" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://linkedin.com/in/ajaysuthaharan/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="/resume.pdf" target="_blank" rel="noreferrer">Resume ↗</a></div><p className="footer-note">Ajay Suthaharan <span>Ottawa / Toronto, Canada</span></p></footer>
+}
+export default function App() {
+  return <div className="site-shell"><a className="skip-link" href="#main">Skip to content</a><Navigation /><main id="main">
+    <section className="hero" aria-labelledby="hero-title"><div className="hero-copy"><p className="eyebrow">AJAY SUTHARAHAN · COMPUTER SCIENCE @ UOTTAWA</p><h1 id="hero-title">Building AI.<br /><span>Engineering what’s next.</span></h1><p className="hero-description">I build AI systems and backend applications, with experience in foundation-model research, statistical programming, and full-stack development.</p><div className="hero-actions"><a className="button primary" href="#projects">Explore my work ↓</a><a className="button secondary" href="/resume.pdf" target="_blank" rel="noreferrer">View resume ↗</a></div><p className="location"><span className="status-dot" />Based in Ottawa · Open to Ottawa & Toronto opportunities</p></div>
+    <Link className="hero-feature" to="/projects/hiprex" aria-label="Explore HiPREX, my featured AI-agent project"><div className="feature-top"><span className="mini-icon">H</span><span>PROJECT SPOTLIGHT</span><span aria-hidden="true">↗</span></div><div className="memory-visual" aria-hidden="true"><div className="message-bubble">Remember my favorite color is blue.</div><div className="route-line"><span>PLAN</span><i /><span>UPDATE</span><i /><span>STORE</span></div><div className="state-block"><span>persistent state</span><code>favorite_color: <b>"blue"</b></code></div></div><div className="feature-bottom"><h2>HiPREX</h2><p>AI agents with memory.<br />Built around deterministic execution.</p><span className="text-link">Explore project ↗</span></div></Link></section>
+    <section id="experience" className="section" aria-labelledby="experience-title"><div className="section-heading"><div><p className="eyebrow">01 / EXPERIENCE</p><h2 id="experience-title">Where I’ve contributed.</h2></div><span className="section-aside">Research. Data. Software.</span></div><div className="experience-list">{experiences.map(exp => <article className="experience-row" key={exp.company}><div className={'company-mark '+exp.style} aria-hidden="true">{exp.mark}</div><div className="experience-body"><div className="experience-title"><h3>{exp.company}</h3>{exp.current && <span className="current-badge">Current</span>}</div><p className="role">{exp.role}</p><p className="experience-description">{exp.description}</p></div><p className="experience-date">{exp.period}</p></article>)}</div></section>
+    <section id="projects" className="section" aria-labelledby="projects-title"><div className="section-heading"><div><p className="eyebrow">02 / SELECTED WORK</p><h2 id="projects-title">A few things I’ve built.</h2></div><a className="text-link" href="https://github.com/Ajay757" target="_blank" rel="noreferrer">GitHub profile ↗</a></div><div className="project-grid">{projects.map((project,index) => <article className="project-card" key={project.slug}><Link to={'/projects/'+project.slug} className={'project-image '+project.slug} tabIndex={-1} aria-hidden="true"><img src={project.image} alt="" loading="lazy" /><span className="image-label">0{index+1} / {project.category}</span></Link><div className="project-content"><p className="eyebrow">{project.category}</p><h3><Link to={'/projects/'+project.slug}>{project.title}</Link></h3><p>{project.description}</p><ul className="tags" aria-label="Technologies">{project.tech.map(tech => <li key={tech}>{tech}</li>)}</ul><Link className="project-link" to={'/projects/'+project.slug}>View project <span aria-hidden="true">↗</span></Link></div></article>)}</div></section>
+    <section className="other-work section" aria-labelledby="other-title"><div><p className="eyebrow">03 / EXPLORATIONS</p><h2 id="other-title">A little interface design.</h2><p>Selected UI experiments from SEG3125.</p></div><div className="other-links">{otherWork.map(work => <a href={work.url} key={work.title} target="_blank" rel="noreferrer"><span>{work.title}<small>{work.type}</small></span><span aria-hidden="true">↗</span></a>)}</div></section>
+  </main><Footer /></div>
+}

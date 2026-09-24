@@ -1,16 +1,25 @@
-# React + Vite
+# Ajay Suthaharan — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React, Vite, and Tailwind portfolio focused on AI and software engineering.
 
-Currently, two official plugins are available:
+## Local development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```sh
+npm install
+npm run dev
+```
 
-## React Compiler
+## Validation
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```sh
+npm run build
+npm run lint
+```
 
-## Expanding the ESLint configuration
+Content lives in `src/data/portfolioData.js`. Project overviews are available at `/projects/:slug`. Existing classroom components are retained in the source but no longer appear on the homepage.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The build emits browser assets in `dist/client`, a minimal SPA Worker in `dist/server`, and Sites metadata in `dist/.openai`. The existing Netlify `_redirects` file is retained for SPA routing.
+
+`public/resume.pdf` is the general/SWE resume copied from the workspace on September 23, 2026. Direct project repository URLs are not assumed: project pages link to Ajay’s verified GitHub profile.
+
+The social image in `public/og.png` was created with the built-in imagegen tool using this brief: a minimal dark portfolio sharing card, softly rounded panel and blue memory-node motif, with the exact name and headline displayed on the site.
