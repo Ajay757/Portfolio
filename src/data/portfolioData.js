@@ -6,7 +6,27 @@ export const experiences = [
     "current": true,
     "mark": "SC",
     "style": "statcan",
-    "description": "Working on SAS-to-R modernization for Labour Force Survey estimation workflows, with a focus on verification and documentation."
+    "description": "Modernizing statistical programs for the Labour Force Survey, translating SAS workflows into R with verification and documentation built into the work.",
+    "details": [
+      [
+        "My work",
+        "My assigned work covers migrating average-standard-error programs and bootstrap-weight generation from SAS to R. The scope includes checking outputs and documenting the translated workflows."
+      ],
+      [
+        "Why it matters",
+        "These programs support estimation and variance estimation for the Labour Force Survey. Reproducibility and correctness are central to the migration."
+      ],
+      [
+        "Planned research",
+        "A proposed follow-on study will explore ML approaches to non-response adjustment. This remains planned analysis rather than a completed result."
+      ]
+    ],
+    "skills": [
+      "R",
+      "SAS",
+      "Statistical programming",
+      "Verification"
+    ]
   },
   {
     "company": "Natural Resources Canada",
@@ -14,7 +34,27 @@ export const experiences = [
     "period": "Jan — Apr 2026",
     "mark": "NR",
     "style": "nrcan",
-    "description": "Developed a taxonomy and comparison framework for remote-sensing foundation models, contributing to a research review paper."
+    "description": "Studied remote-sensing foundation models and developed a taxonomy and comparison framework to support a research review paper.",
+    "details": [
+      [
+        "Research scope",
+        "I surveyed vision, vision-language, and spatiotemporal foundation models for Earth observation, examining how they represent different sensor types and spatial or temporal information."
+      ],
+      [
+        "My contribution",
+        "I developed a taxonomy and unified comparison tables, and contributed a framework and synthesis to a research review paper. The framework considers spatial, temporal, multispectral, hyperspectral, SAR, and cross-modal representations."
+      ],
+      [
+        "Technical communication",
+        "The work involved synthesizing research into structured comparisons and a team presentation, making a broad model landscape easier to discuss and assess."
+      ]
+    ],
+    "skills": [
+      "Foundation models",
+      "Remote sensing",
+      "Research synthesis",
+      "Technical writing"
+    ]
   },
   {
     "company": "Driftstack",
@@ -22,10 +62,29 @@ export const experiences = [
     "period": "May — Aug 2024",
     "mark": "D",
     "style": "driftstack",
-    "description": "Built React interfaces and contributed to APIs and AppSumo integration workflows using Laravel and relational databases."
+    "description": "Contributed to React interfaces, RESTful APIs, and AppSumo integration workflows spanning frontend, backend, and relational databases.",
+    "details": [
+      [
+        "Frontend",
+        "I improved React website interfaces and navigation, focusing on how users move through the product."
+      ],
+      [
+        "Backend & integrations",
+        "I contributed to RESTful APIs and third-party connections, and implemented AppSumo user flows and real-time data synchronization using Laravel, MySQL, and MariaDB."
+      ],
+      [
+        "Development workflow",
+        "I also integrated AI-based development tools into asynchronous coding workflows."
+      ]
+    ],
+    "skills": [
+      "React",
+      "Laravel",
+      "REST APIs",
+      "MySQL / MariaDB"
+    ]
   }
 ]
-
 export const projects = [
   {
     "slug": "hiprex",
@@ -59,7 +118,8 @@ export const projects = [
         "Evaluation ahead",
         "The proposed tradeoff is to spend more computation time on iterative refinement while bounding the recursive state. Memory use, latency, reasoning quality, and halting behavior still need empirical evaluation; the proposal does not establish measured improvements."
       ]
-    ]
+    ],
+    "proposal": true
   },
   {
     "slug": "melanoma",
@@ -92,6 +152,12 @@ export const projects = [
         "Scope and limitations",
         "An educational classification project, not a clinically validated diagnostic tool. Model confidence should not be interpreted as clinical certainty."
       ]
+    ],
+    "links": [
+      {
+        "label": "Try the live app",
+        "url": "https://melenomadetector.streamlit.app/"
+      }
     ]
   },
   {
@@ -128,28 +194,43 @@ export const projects = [
     "title": "SkySense",
     "category": "ANALYTICS / WEB",
     "image": "/assets/skysense.png",
-    "description": "A hackathon dashboard for exploring flight paths, airspace conflicts, and activity hotspots.",
+    "description": "A Python flight simulator and interactive dashboard for multi-aircraft conflicts and airspace hotspots.",
     "tech": [
+      "Python",
       "React",
       "Leaflet",
-      "Vite"
+      "Node.js"
     ],
     "status": "Hackathon project",
-    "summary": "SkySense brings flight-path visualization and airspace analytics into a map-based dashboard.",
-    "overview": "The project combines React interfaces with Leaflet maps to explore flight paths and surface airspace conflicts and hotspots.",
+    "summary": "SkySense combines a Python trajectory simulator with a React and Leaflet dashboard to analyze 250–1,000 simulated Canadian flights, explore multi-aircraft conflicts, and identify busy waypoints.",
+    "overview": "Our team built a simulation-driven airspace analysis platform. Running an analysis regenerates flight trajectories and conflict data, then updates the dashboard and map views. It is a hackathon prototype using simulated flights, rather than a live air-traffic control system.",
     "details": [
       [
-        "Flight-path visualization",
-        "Map-based views make routes and spatial relationships easier to inspect."
+        "Simulation & conflict detection",
+        "A custom Python engine simulates trajectories, identifies conflicts involving multiple aircraft, and records their timing in structured JSON."
       ],
       [
-        "Analytics",
-        "Conflict detection and hotspot identification help explore airspace activity."
+        "An interactive view of the data",
+        "The React dashboard presents flight totals, time-of-day and altitude distributions, aircraft types, top routes, hotspots, and a navigable conflict table. A custom Vite API endpoint connects the simulation with the interface."
       ],
       [
-        "Project context",
-        "Built as a hackathon project focused on flight analytics and visualization."
+        "Exploring a conflict",
+        "Leaflet maps show every involved aircraft with a distinct color, its complete multi-waypoint route, and the time of the conflict. React Context shares state across dashboard views."
+      ],
+      [
+        "Waypoint-level hotspots",
+        "A waypoint-to-aircraft mapping counts traffic at each location. A dataset-adaptive threshold identifies heavily used waypoints across different simulation sizes."
+      ],
+      [
+        "Future directions",
+        "Live ADS-B feeds, predictive conflict resolution, AI-assisted risk scoring, and airspace optimization are possible extensions, not features claimed for this prototype."
       ]
+    ],
+    "links": [
+      {
+        "label": "View hackathon submission",
+        "url": "https://devpost.com/software/nav-canada-trajectory-insight-challenge"
+      }
     ]
   },
   {
@@ -209,28 +290,125 @@ export const projects = [
         "Built with JavaScript, HTML, CSS, and JSON configuration."
       ]
     ]
+  },
+  {
+    "slug": "icarus",
+    "title": "Icarus",
+    "category": "AI ASSISTANT",
+    "status": "Early work in progress",
+    "image": null,
+    "description": "An early-stage personal AI assistant exploring affordable conversation and everyday task support.",
+    "tech": [],
+    "summary": "Icarus is an actively developing personal AI assistant inspired by Jarvis. The goal is a low-cost chatbot that can eventually help with everyday tasks through connected services and voice interaction.",
+    "overview": "The project is still at an early stage. I am working toward a useful, affordable conversational assistant; the integrations and voice capabilities below describe the intended product, not completed features.",
+    "details": [
+      [
+        "Planned integrations",
+        "Google Calendar and Gmail APIs, along with calendar and alarm functionality, are intended to help the assistant support scheduling and daily tasks."
+      ],
+      [
+        "Voice as a future interface",
+        "The end goal is an assistant that can both listen and speak. Voice interaction remains part of the roadmap."
+      ],
+      [
+        "Current focus",
+        "Early development and exploration, with affordability as a design goal. There is no public demo or completed integration suite to present yet."
+      ]
+    ]
+  },
+  {
+    "slug": "steamscope",
+    "title": "SteamScope",
+    "category": "ANALYTICS / DASHBOARD",
+    "status": "Web project",
+    "image": "/assets/analytics-site.jpg",
+    "description": "A web-based analytics interface focused on presenting data through a dashboard.",
+    "tech": [],
+    "summary": "SteamScope is an analytics website exploring how dashboard interfaces can make data easier to inspect.",
+    "overview": "A dashboard and data-visualization project. The live website provides the current experience.",
+    "details": [],
+    "links": [
+      {
+        "label": "Visit website",
+        "url": "https://steamscope.netlify.app/"
+      }
+    ]
+  },
+  {
+    "slug": "crown-cuts",
+    "title": "Crown Cuts",
+    "category": "WEB / BOOKING",
+    "status": "Interface project",
+    "image": "/assets/crown-cuts.png",
+    "description": "A barbershop website with service discovery, barber profiles, and an appointment-booking flow.",
+    "tech": [],
+    "summary": "Crown Cuts is a barbershop website designed around finding a service, choosing a barber, and moving through an appointment-booking interface.",
+    "overview": "The project brings service information, barber profiles, booking, and confirmation flows together in a cohesive interface.",
+    "details": [
+      [
+        "Service discovery",
+        "Visitors can explore the available services and barber profiles before choosing an appointment."
+      ],
+      [
+        "Booking experience",
+        "A guided booking and confirmation flow connects exploration with the next step."
+      ]
+    ],
+    "links": [
+      {
+        "label": "Visit website",
+        "url": "https://crown-cuts.netlify.app/"
+      }
+    ]
+  },
+  {
+    "slug": "novagear",
+    "title": "NovaGear",
+    "category": "WEB / E-COMMERCE",
+    "status": "Interface prototype",
+    "image": "/assets/novagear.png",
+    "description": "A high-fidelity e-commerce interface for gaming accessories.",
+    "tech": [],
+    "summary": "NovaGear is an e-commerce prototype focused on presenting gaming accessories through a polished shopping interface.",
+    "overview": "The project explores the visual design and usability of a gaming-accessories storefront. It is presented as an interface prototype rather than a production commerce system.",
+    "details": [],
+    "links": [
+      {
+        "label": "Visit website",
+        "url": "https://nova-gear.netlify.app/"
+      }
+    ]
   }
 ]
-
-export const otherWork = [
+export const projectGroups = [
   {
-    "title": "Crown Cuts",
-    "type": "Service & booking interface",
-    "url": "https://crown-cuts.netlify.app/"
+    "id": "ai-ml",
+    "title": "AI / ML",
+    "number": "02A",
+    "slugs": [
+      "hiprex",
+      "melanoma",
+      "icarus"
+    ]
   },
   {
-    "title": "NovaGear",
-    "type": "E-commerce prototype",
-    "url": "https://nova-gear.netlify.app/"
+    "id": "analytics",
+    "title": "Analytics",
+    "number": "02B",
+    "slugs": [
+      "skysense",
+      "steamscope",
+      "e-hotels"
+    ]
   },
   {
-    "title": "PulsePath",
-    "type": "Sequence memory game",
-    "url": "https://pulsepath-game.netlify.app/"
-  },
-  {
-    "title": "SteamScope",
-    "type": "Analytics interface",
-    "url": "https://steamscope.netlify.app/"
+    "id": "software",
+    "title": "Software Engineering",
+    "number": "02C",
+    "slugs": [
+      "crown-cuts",
+      "novagear",
+      "rentify"
+    ]
   }
 ]
